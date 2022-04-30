@@ -26,6 +26,10 @@
 - name: Construindo a imagem Docker
   command: docker build -t pythonapp:1.0 .
   register: docker_build
+  args:
+    chdir: /home/admin
 - name: Subindo a aplicacao
   command: docker-compose up -d
   register: docker_compose_up
+  args:
+    chdir: /home/admin
